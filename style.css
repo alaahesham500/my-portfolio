@@ -1,0 +1,225 @@
+/* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ====== HEADER ====== */
+.header {
+    background-color: #5C3A21;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    transform: scale(1.1);
+}
+
+/* ====== HERO ====== */
+.hero {
+    background-color: #FAF8F5; 
+    padding: 80px 0;
+}
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    gap: 50px;
+}
+.hero-text h2 {
+    font-size: 3rem;
+    color: #5C3A21;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease forwards;
+}
+.hero-text p {
+    margin-bottom: 20px;
+    color: #5C3A21;
+    font-size: 2rem;
+    animation: fadeIn 1.5s ease forwards;
+}
+.btn {
+    background-color: #5C3A21;
+    color: #e7e3cd; /* لمسة ذهبية */
+    padding: 14px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #8B5E3C; /* بني فاتح عند Hover */
+}
+.hero-img img {
+    width: 320px;
+    border-radius: 50%;
+    border: 6px solid #8B5E3C;;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ====== SECTIONS ====== */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #8B5E3C;;
+    position: relative;
+}
+section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #8B5E3C;;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ====== SKILLS ====== */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.skill-card {
+    background-color: #D9C5B2; /* بني فاتح مثل الطاولة */
+    color: #5C3A21;
+    padding: 25px 35px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(37, 32, 3, 0.3);
+}
+
+/* ====== PROJECTS ====== */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.project-card {
+    background-color: #F5F0EC; /* أبيض كريمي */
+    color: #5C3A21;
+    border: 2px solid #D9C5B2; /* حدود بني فاتح */
+    padding: 35px 45px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.project-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(37, 32, 3, 0.3);
+}
+
+/* ====== CONTACT ====== */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    margin: auto;
+}
+.contact input, .contact textarea {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+.contact button {
+    background-color: #5C3A21;
+    color: #e7e3cd;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.contact button:hover {
+    background-color: #8B5E3C;
+    transform: scale(1.05);
+}
+
+/* ====== FOOTER ====== */
+.footer {
+    background-color:#5C3A21;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-15px);}
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 991px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-img img {
+        width: 250px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .skills-grid, .projects-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contact form {
+        width: 80%;
+    }
+}
